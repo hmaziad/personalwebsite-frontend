@@ -1,0 +1,132 @@
+import React from "react";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+export default class ProjectModal extends React.Component {
+  state = {
+    open: false,
+    project: {},
+  };
+
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+
+  //   componentWillReceiveProps(nextProps) {
+  //     if (nextProps.project !== this.props.project) {
+  //       this.setState({ project: nextProps.selected });
+  //       this.selectNew();
+  //     }
+  //   }
+
+  componentDidMount = () => {
+    this.setState({ project: this.props.project });
+  };
+  render() {
+    const { open, project } = this.state;
+    const projectImage = "images/portfolio/" + project.image;
+
+    return (
+      <div>
+        {/* <button onClick={this.onOpenModal}>Open modal</button> */}
+        <div key={project.title} className="columns portfolio-item">
+          <div className="item-wrap">
+            <div onClick={this.onOpenModal} style={{ cursor: "pointer" }}>
+              <img alt={project.title} src={projectImage} />
+              <div className="overlay">
+                <div className="portfolio-item-meta">
+                  <h5>{project.title}</h5>
+                  <p>{project.category}</p>
+                </div>
+              </div>
+              {/* <div className="link-icon">
+                <i className="fa fa-link"></i>
+              </div> */}
+            </div>
+          </div>
+        </div>
+        <Modal open={open} onClose={this.onCloseModal} center>
+          <h2>{project.title}</h2>
+          {project.content ? (
+            <div>
+              <p>{project.content.description}</p>
+              <ul style={{ marginLeft: "5%" }}>
+                {project.content.list.map((item) => (
+                  // <span>&bull;</span>
+                  <li key={Math.random()}>
+                    <table>
+                      <tr>
+                        <td style={{ paddingRight: 5 }}> &bull; </td>
+                        <td> {item}</td>
+                      </tr>
+                    </table>
+                    {/* <span style={{ whiteSpace: "nowrap", overflow: "hidden" }}>
+                     
+                    </span>
+                    <span></span> */}
+                  </li>
+                ))}
+              </ul>
+
+              {project.url ? (
+                <div
+                  style={{
+                    display: "block",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    textAlign: "center",
+                  }}
+                >
+                  <a
+                    style={{
+                      color: "blue",
+                      textDecoration: "underline",
+                    }}
+                    href={project.url}
+                    target="_blank"
+                  >
+                    Click here to check the project
+                  </a>
+                </div>
+              ) : null}
+              <br />
+
+              {project.content.video ? (
+                <div>
+                  <iframe
+                    title={project.content.video}
+                    style={{
+                      display: "block",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                    width="100%"
+                    height={window.innerHeight / 2}
+                    src={project.content.video}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    autoplay
+                  ></iframe>
+                </div>
+              ) : null}
+              {project.content.images ? (
+                <Carousel showArrows={true}>
+                  {project.content.images.map((imageUrl) => (
+                    <div key={Math.random()}>
+                      <img src={imageUrl} />
+                    </div>
+                  ))}
+                </Carousel>
+              ) : null}
+            </div>
+          ) : null}
+        </Modal>
+      </div>
+    );
+  }
+}
