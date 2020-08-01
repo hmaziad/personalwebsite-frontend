@@ -17,6 +17,9 @@
     "react-responsive-modal": "^5.0.2",
     "react-scripts": "3.4.1"
   },
+  "engines": {
+    "node": "10.16.x"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
