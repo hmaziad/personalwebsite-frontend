@@ -8,6 +8,7 @@ export default class ProjectModal extends React.Component {
   state = {
     open: false,
     project: {},
+    dataArr: [],
   };
 
   onOpenModal = () => {
@@ -26,12 +27,16 @@ export default class ProjectModal extends React.Component {
   //   }
 
   componentDidMount = () => {
-    this.setState({ project: this.props.project });
+    this.setState({
+      project: this.props.project,
+      dataArr: [...this.props.project.content.list],
+    });
   };
   render() {
     const { open, project } = this.state;
     const projectImage = "images/portfolio/" + project.image;
-
+    // const dataArr = [...project.content.list];
+    const arr = [1, 2, 3];
     return (
       <div>
         {/* <button onClick={this.onOpenModal}>Open modal</button> */}
@@ -58,12 +63,11 @@ export default class ProjectModal extends React.Component {
               <p>{project.content.description}</p>
               {/* <ul style={{ marginLeft: "5%" }}> */}
               {project.content.list ? "true" : "false"}
-              {project.content.list ? project.content.list[0] : "false"}
+              {project.content.list ? typeof arr : "false"}
 
-              {project.content.list.map((item) => (
+              {arr.map((item) => (
                 // <span>&bull;</span>
                 <div>
-                  <p>{item}</p>
                   <Flex
                     key={Math.random()}
                     container
