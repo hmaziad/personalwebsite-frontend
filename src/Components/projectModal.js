@@ -59,23 +59,26 @@ export default class ProjectModal extends React.Component {
               {/* <ul style={{ marginLeft: "5%" }}> */}
               {project.content.list ? "true" : "false"}
               {project.content.list ? project.content.list[0] : "false"}
+
               {project.content.list.map((item) => (
                 // <span>&bull;</span>
-                <Flex
-                  key={Math.random()}
-                  container
-                  style={{ flexDirection: "row" }}
-                >
-                  {/* <div style={{ flexDirection: "row" }}> */}
-                  <div style={{ display: "flex" }}>
-                    <span style={{ paddingRight: 5 }}> &bull; </span>
-                  </div>
-                  <div style={{ display: "flex" }}>
-                    <span> {item}</span>
-                  </div>
-                  {/* </div> */}
-                </Flex>
-
+                <div>
+                  <p>{item}</p>
+                  <Flex
+                    key={Math.random()}
+                    container
+                    style={{ flexDirection: "row" }}
+                  >
+                    {/* <div style={{ flexDirection: "row" }}> */}
+                    <div style={{ display: "flex" }}>
+                      <span style={{ paddingRight: 5 }}> &bull; </span>
+                    </div>
+                    <div style={{ display: "flex" }}>
+                      <span> {item}</span>
+                    </div>
+                    {/* </div> */}
+                  </Flex>
+                </div>
                 // <div key={Math.random()}>
                 //   {/* <p style={{ paddingRight: 5 }}> &bull; </p> */}
 
