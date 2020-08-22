@@ -65,6 +65,7 @@ export default class ProjectModal extends React.Component {
               {project.content.list ? "true" : "false"}
               {project.content.list ? typeof arr : "false"}
 
+              {/* </ul> */}
               {arr.map((item) => (
                 // <span>&bull;</span>
                 <div>
@@ -88,8 +89,6 @@ export default class ProjectModal extends React.Component {
 
                 // </div>
               ))}
-              {/* </ul> */}
-
               {project.url ? (
                 <div
                   style={{
