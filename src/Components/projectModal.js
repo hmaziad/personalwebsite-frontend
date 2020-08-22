@@ -59,16 +59,8 @@ export default class ProjectModal extends React.Component {
                 {project.content.list.map((item) => (
                   // <span>&bull;</span>
                   <li key={Math.random()}>
-                    <table>
-                      <tr>
-                        <td style={{ paddingRight: 5 }}> &bull; </td>
-                        <td> {item}</td>
-                      </tr>
-                    </table>
-                    {/* <span style={{ whiteSpace: "nowrap", overflow: "hidden" }}>
-                     
-                    </span>
-                    <span></span> */}
+                    {/* <p style={{ paddingRight: 5 }}> &bull; </p> */}
+                    <p>&bull; {item}</p>
                   </li>
                 ))}
               </ul>
