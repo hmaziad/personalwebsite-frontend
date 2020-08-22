@@ -58,6 +58,7 @@ export default class ProjectModal extends React.Component {
               <p>{project.content.description}</p>
               {/* <ul style={{ marginLeft: "5%" }}> */}
               {project.content.list ? "true" : "false"}
+              {project.content.list ? project.content.list[0] : "false"}
               {project.content.list.map((item) => (
                 // <span>&bull;</span>
                 <Flex
