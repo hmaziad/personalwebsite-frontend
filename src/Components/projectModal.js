@@ -58,6 +58,29 @@ export default class ProjectModal extends React.Component {
         </div>
         <Modal open={open} onClose={this.onCloseModal} center>
           <h2>{project.title}</h2>
+          {arr.map((item) => (
+            // <span>&bull;</span>
+            <div>
+              <Flex
+                key={Math.random()}
+                container
+                style={{ flexDirection: "row" }}
+              >
+                {/* <div style={{ flexDirection: "row" }}> */}
+                <div style={{ display: "flex" }}>
+                  <span style={{ paddingRight: 5 }}> &bull; </span>
+                </div>
+                <div style={{ display: "flex" }}>
+                  <span> {item}</span>
+                </div>
+                {/* </div> */}
+              </Flex>
+            </div>
+            // <div key={Math.random()}>
+            //   {/* <p style={{ paddingRight: 5 }}> &bull; </p> */}
+
+            // </div>
+          ))}
           {project.content ? (
             <div>
               <p>{project.content.description}</p>
@@ -66,29 +89,7 @@ export default class ProjectModal extends React.Component {
               {project.content.list ? typeof arr : "false"}
 
               {/* </ul> */}
-              {arr.map((item) => (
-                // <span>&bull;</span>
-                <div>
-                  <Flex
-                    key={Math.random()}
-                    container
-                    style={{ flexDirection: "row" }}
-                  >
-                    {/* <div style={{ flexDirection: "row" }}> */}
-                    <div style={{ display: "flex" }}>
-                      <span style={{ paddingRight: 5 }}> &bull; </span>
-                    </div>
-                    <div style={{ display: "flex" }}>
-                      <span> {item}</span>
-                    </div>
-                    {/* </div> */}
-                  </Flex>
-                </div>
-                // <div key={Math.random()}>
-                //   {/* <p style={{ paddingRight: 5 }}> &bull; </p> */}
 
-                // </div>
-              ))}
               {project.url ? (
                 <div
                   style={{
