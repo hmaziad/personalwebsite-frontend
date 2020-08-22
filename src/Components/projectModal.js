@@ -3,6 +3,7 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Flex } from "./Flex";
 export default class ProjectModal extends React.Component {
   state = {
     open: false,
@@ -55,15 +56,30 @@ export default class ProjectModal extends React.Component {
           {project.content ? (
             <div>
               <p>{project.content.description}</p>
-              <ul style={{ marginLeft: "5%" }}>
-                {project.content.list.map((item) => (
-                  // <span>&bull;</span>
-                  <li key={Math.random()}>
-                    {/* <p style={{ paddingRight: 5 }}> &bull; </p> */}
-                    <p>&bull; {item}</p>
-                  </li>
-                ))}
-              </ul>
+              {/* <ul style={{ marginLeft: "5%" }}> */}
+              {project.content.list.map((item) => (
+                // <span>&bull;</span>
+                <Flex
+                  key={Math.random()}
+                  container
+                  style={{ flexDirection: "row" }}
+                >
+                  {/* <div style={{ flexDirection: "row" }}> */}
+                  <div style={{ display: "flex" }}>
+                    <span style={{ paddingRight: 5 }}> &bull; </span>
+                  </div>
+                  <div style={{ display: "flex" }}>
+                    <span> {item}</span>
+                  </div>
+                  {/* </div> */}
+                </Flex>
+
+                // <div key={Math.random()}>
+                //   {/* <p style={{ paddingRight: 5 }}> &bull; </p> */}
+
+                // </div>
+              ))}
+              {/* </ul> */}
 
               {project.url ? (
                 <div
