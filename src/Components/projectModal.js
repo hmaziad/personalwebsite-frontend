@@ -35,7 +35,22 @@ export default class ProjectModal extends React.Component {
     const projectImage = "images/portfolio/" + project.image;
     // const dataArr = [...project.content.list];
     const dataList = project.content
-      ? project.content.list.map((item) => <p>{item}</p>)
+      ? project.content.list.map((item) => (
+          <div>
+            <Flex
+              key={Math.random()}
+              container
+              style={{ flexDirection: "row" }}
+            >
+              <div style={{ display: "flex" }}>
+                <span style={{ paddingRight: 5 }}> &bull; </span>
+              </div>
+              <div style={{ display: "flex" }}>
+                <span> {item}</span>
+              </div>
+            </Flex>
+          </div>
+        ))
       : null;
     return (
       <div>
@@ -59,15 +74,11 @@ export default class ProjectModal extends React.Component {
         <Modal open={open} onClose={this.onCloseModal} center>
           <h2>{project.title}</h2>
           <p>{this.state.arr}</p>
-          {dataList}
           {project.content ? (
             <div>
               <p>{project.content.description}</p>
-              {/* <ul style={{ marginLeft: "5%" }}> */}
-              {project.content.list ? "true" : "false"}
-              {project.content.list ? typeof arr : "false"}
 
-              {/* </ul> */}
+              {dataList}
 
               {project.url ? (
                 <div
@@ -125,22 +136,4 @@ export default class ProjectModal extends React.Component {
       </div>
     );
   }
-}
-
-{
-  /* <div>
-            {console.log("my item", item)}
-              <Flex
-                key={Math.random()}
-                container
-                style={{ flexDirection: "row" }}
-              >
-                <div style={{ display: "flex" }}>
-                  <span style={{ paddingRight: 5 }}> &bull; </span>
-                </div>
-                <div style={{ display: "flex" }}>
-                  <span> {item}</span>
-                </div>
-              </Flex>
-            </div> */
 }
