@@ -9,6 +9,7 @@ export default class ProjectModal extends React.Component {
     open: false,
     project: {},
     dataArr: [],
+    arr: [1, 2, 3],
   };
 
   onOpenModal = () => {
@@ -36,7 +37,7 @@ export default class ProjectModal extends React.Component {
     const { open, project } = this.state;
     const projectImage = "images/portfolio/" + project.image;
     // const dataArr = [...project.content.list];
-    const arr = [1, 2, 3];
+
     return (
       <div>
         {/* <button onClick={this.onOpenModal}>Open modal</button> */}
@@ -58,29 +59,7 @@ export default class ProjectModal extends React.Component {
         </div>
         <Modal open={open} onClose={this.onCloseModal} center>
           <h2>{project.title}</h2>
-          {arr.map((item) => (
-            // <span>&bull;</span>
-            <div>
-              <Flex
-                key={Math.random()}
-                container
-                style={{ flexDirection: "row" }}
-              >
-                {/* <div style={{ flexDirection: "row" }}> */}
-                <div style={{ display: "flex" }}>
-                  <span style={{ paddingRight: 5 }}> &bull; </span>
-                </div>
-                <div style={{ display: "flex" }}>
-                  <span> {item}</span>
-                </div>
-                {/* </div> */}
-              </Flex>
-            </div>
-            // <div key={Math.random()}>
-            //   {/* <p style={{ paddingRight: 5 }}> &bull; </p> */}
-
-            // </div>
-          ))}
+          <p>{this.state.arr}</p>
           {project.content ? (
             <div>
               <p>{project.content.description}</p>
@@ -146,4 +125,22 @@ export default class ProjectModal extends React.Component {
       </div>
     );
   }
+}
+
+{
+  /* <div>
+            {console.log("my item", item)}
+              <Flex
+                key={Math.random()}
+                container
+                style={{ flexDirection: "row" }}
+              >
+                <div style={{ display: "flex" }}>
+                  <span style={{ paddingRight: 5 }}> &bull; </span>
+                </div>
+                <div style={{ display: "flex" }}>
+                  <span> {item}</span>
+                </div>
+              </Flex>
+            </div> */
 }
