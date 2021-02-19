@@ -3,7 +3,7 @@ export const data = {
     name: "Hussein Maziad",
     occupation: "Computer Engineer",
     description:
-      "I am passionate about developing complex software using optimized and high performance algorithnms ",
+      "I am passionate about developing complex software using optimized and high performance algorithms ",
     image: "profile-pic.PNG",
     bio:
       "Hussein Maziad has graduate from the Lebanese American University with a B.E in Computer Engineerin. He completed a year-long internship at European Organization for Nuclear Research (CERN) where he worked with international teammates, assisted in multiple projects, and led all IT related issues encountered by his team. Hussein also was an exchange student and went to the United States for an academic year when he was 16 years old and later was invited again to Washington DC where he instructed the next generation of exchange students.",
@@ -82,6 +82,10 @@ export const data = {
       },
     ],
     skills: [
+      {
+        name: "Java (Data Structures, Algorithms, and Design Patterns)",
+        level: "50%",
+      },
       {
         name: "ReactJs",
         level: "50%",
