@@ -3,10 +3,10 @@ export const data = {
     name: "Hussein Maziad",
     occupation: "Computer Engineer",
     description:
-      "I am passionate about mobile and web development, entrepreneurship, and teaching",
+      "I am passionate about developing complex software using optimized and high performance algorithnms ",
     image: "profile-pic.PNG",
     bio:
-      "Hussein Maziad is a senior computer engineering student at the Lebanese American University. He completed a year-long internship at European Organization for Nuclear Research (CERN) where he worked with international teammates, assisted in multiple projects, and led all IT related issues encountered by his team. Hussein also was an exchange student and went to the United States for an academic year when he was 16 years old and later was invited again to Washington DC where he instructed the next generation of exchange students.",
+      "Hussein Maziad has graduate from the Lebanese American University with a B.E in Computer Engineerin. He completed a year-long internship at European Organization for Nuclear Research (CERN) where he worked with international teammates, assisted in multiple projects, and led all IT related issues encountered by his team. Hussein also was an exchange student and went to the United States for an academic year when he was 16 years old and later was invited again to Washington DC where he instructed the next generation of exchange students.",
     contactmessage: "Kindly fill the below details to contact me.",
     email: "husseinmaziad@gmail.com",
     phone: "+96178989864",
@@ -18,7 +18,7 @@ export const data = {
     },
     website: "http://www.husseinmaziad.com",
     resumedownload:
-      "https://drive.google.com/uc?export=download&id=1z0bY5P1jR3oblV_drZV2RaE-JPjWKduq",
+      "https://lauedu74602-my.sharepoint.com/:w:/g/personal/hussein_maziad_lau_edu/EVaZEKgEriRMh52YFuIIirsBOcJcLiUTYqsZDKYo4x22og?e=Kb7wOu",
     social: [
       {
         name: "whatsapp",
